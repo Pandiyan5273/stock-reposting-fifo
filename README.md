@@ -19,51 +19,51 @@ All transaction quantities remain unchanged.
 
 ### 10 October: Purchase Receipt — Milk, 50 L
 
-**Before:** ![alt text](image.png)
+**Before:** ![alt text](images/image.png)
 
-**After:** ![alt text](image-13.png)
+**After:** ![alt text](images/image-13.png)
 
 ### 15 October: Delivery Note — Milk, 80 L
 
-**Before:** ![alt text](image-1.png)
+**Before:** ![alt text](images/image-1.png)
 
-**After:** ![alt text](image-12.png)
+**After:** ![alt text](images/image-12.png)
 
 ### 20 October: Purchase Receipt — Milk, 50 L
 
-**Before:** ![alt text](image-2.png)
+**Before:** ![alt text](images/image-2.png)
 
-**After:** ![alt text](image-11.png)
+**After:** ![alt text](images/image-11.png)
 
 ### 21 October: Stock Entry (Manufacture) — 100 L Milk to 10 kg Milk Powder
 
 Include both the consumed Milk and produced Milk Powder rows with their valuation amounts.
 
-**Before:** ![alt text](image-3.png)
+**Before:** ![alt text](images/image-3.png)
 
-**After:** ![alt text](image-10.png)
+**After:** ![alt text](images/image-10.png)
 
 ### 25 October: Delivery Note — Milk Powder, 10 kg
 
-**Before:** ![alt text](image-4.png)
+**Before:** ![alt text](images/image-4.png)
 
-**After:** ![alt text](image-9.png)
+**After:** ![alt text](images/image-9.png)
 
 ### Stock Ledger report — Milk
 
 Include the opening stock and all subsequent Milk transactions, with quantity, movement value and balance value columns.
 
-**Before:** ![alt text](image-5.png)
+**Before:** ![alt text](images/image-5.png)
 
-**After:** ![alt text](image-8.png)
+**After:** ![alt text](images/image-8.png)
 
 ### Stock Ledger report — Milk Powder
 
 Include the manufacturing receipt and final delivery, with quantity, movement value and balance value columns.
 
-**Before:** ![alt text](image-6.png)
+**Before:** ![alt text](images/image-6.png)
 
-**After:** ![alt text](image-7.png)
+**After:** ![alt text](images/image-7.png)
 
 ## 2) How should ERPNext recalculate the valuation of the subsequent transactions?
 
