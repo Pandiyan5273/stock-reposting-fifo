@@ -37,8 +37,6 @@ All transaction quantities remain unchanged.
 
 ### 21 October: Stock Entry (Manufacture) — 100 L Milk to 10 kg Milk Powder
 
-Include both the consumed Milk and produced Milk Powder rows with their valuation amounts.
-
 **Before:** ![alt text](images/image-3.png)
 
 **After:** ![alt text](images/image-10.png)
@@ -51,15 +49,11 @@ Include both the consumed Milk and produced Milk Powder rows with their valuatio
 
 ### Stock Ledger report — Milk
 
-Include the opening stock and all subsequent Milk transactions, with quantity, movement value and balance value columns.
-
 **Before:** ![alt text](images/image-5.png)
 
 **After:** ![alt text](images/image-8.png)
 
 ### Stock Ledger report — Milk Powder
-
-Include the manufacturing receipt and final delivery, with quantity, movement value and balance value columns.
 
 **Before:** ![alt text](images/image-6.png)
 
