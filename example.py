@@ -1,9 +1,4 @@
-"""Repost the Milk receipt and compare stock values."""
-
-import argparse
-
 from stock_reposting import repost
-
 
 def milk_scenario():
 	return [
@@ -61,10 +56,7 @@ def milk_scenario():
 
 
 def main():
-	parser = argparse.ArgumentParser(description=__doc__)
-	parser.add_argument("--rate", default="80", help="Corrected 10 January rate in INR/L")
-	result = repost(milk_scenario(), "purchase-10", parser.parse_args().rate)
-
+	result = repost(milk_scenario(), "purchase-10", 80)
 	print("Amounts in INR. Negative movements are stock issues.")
 	print("Ledger row | Old movement | New movement | Qty after | Value after")
 	for name, row in result["after"].items():
@@ -82,5 +74,4 @@ def main():
 		print(name)
 
 
-if __name__ == "__main__":
-	main()
+main()

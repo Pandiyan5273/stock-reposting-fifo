@@ -1,9 +1,6 @@
-"""FIFO stock valuation and receipt reposting."""
-
 from collections import deque
 from copy import deepcopy
-from datetime import datetime
-from decimal import ROUND_HALF_UP, Decimal, InvalidOperation
+from decimal import ROUND_HALF_UP, Decimal
 
 CENT = Decimal("0.01")
 
@@ -30,12 +27,14 @@ def repost(transactions, receipt_name, new_rate):
 
 
 def replay(transactions):
-	"""Rebuild the ledger in posting order."""
+	"""Rebuild the ledger using fixed YYYY-MM-DDTHH:MM:SS posting dates."""
 	queues = {}
 	rows = {}
 	names = set()
 
-	for transaction in sorted(transactions, key=posting_order):
+	for transaction in sorted(
+		transactions, key=lambda row: (row["posting_at"], row.get("sequence", 0), row["name"])
+	):
 		name = transaction["name"]
 		if not name or name in names:
 			raise ValueError("Transaction names must be nonempty and unique")
@@ -144,18 +143,8 @@ def post_movement(queues, rows, transaction, item, leg, incoming_value=None):
 	return rows[name]
 
 
-def posting_order(transaction):
-	posting_at = datetime.fromisoformat(transaction["posting_at"])
-	if posting_at.tzinfo is not None:
-		raise ValueError("Use naive timestamps in a single company timezone")
-	return posting_at, transaction.get("sequence", 0), transaction["name"]
-
-
 def to_decimal(value):
-	try:
-		value = Decimal(str(value))
-	except InvalidOperation as error:
-		raise ValueError("Quantity and cost must be valid numbers") from error
+	value = Decimal(str(value))
 	if not value.is_finite():
 		raise ValueError("Quantity and cost must be finite numbers")
 	return value
